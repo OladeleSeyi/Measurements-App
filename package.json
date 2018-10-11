@@ -1,0 +1,18 @@
+{
+  "name": "measurements",
+  "version": "1.0.0",
+  "description": "Collect and Store CLients measurements",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "toothy61",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.5.2",
+    "express": "^4.16.4",
+    "mongodb": "^2.2.5",
+    "mongoose": "^4.5.9"
+  }
+}

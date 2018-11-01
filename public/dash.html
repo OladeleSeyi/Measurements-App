@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Clientele</title>
+     <link href="css/nav.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap4.min.css" rel="stylesheet"> -->
+    <style media="screen">
+    body {
+      background-image: linear-gradient(33deg, #ff9a9e 20%, #fad0c4 70%, #fad0c4 100%);
+    }
+    </style>
+  </head>
+  <body>
+    <div class="main container myJumbotron">
+      <div class="row">
+        <!-- gist -->
+        <div class="col-md-6 hidden-sm">
+          <div class="topJumbotron jumbotron">
+            <h2>Measurements App</h2>
+            <p>Welcome<h2 class="text text-primary">User</h2>
+            </p>
+            <p>Please fill the form to get started</p>
+
+          </div>
+
+        </div>
+
+
+        <!--Card -->
+        <div class="col-md-5 col-md-offset-1">
+          <div class="row centreCard">
+            <div class="col-sm-12">
+              <form class="form-signin">
+                <img class="mb-4" src="img/bootstrap-solid.svg" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Please Begin</h1>
+                <input type="text" id="search" class="form-control" placeholder="Client Name"  autofocus="">
+              </form>
+              <p class="mt-5 mb-3 text-muted"></p>
+              <div class="btn-group btn-group-md mt-3">
+                <button class="btn  btn-primary" data-target="#postModal" data-toggle="modal">Post</button>
+                <button class="btn btn-primary" data-target="#getModal" data-toggle="modal" id="pushMe">GET</button>
+                <button class="btn btn-primary" data-target="#searchModal" data-toggle="modal" id="find">Search</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- PostModal -->
+        <div class="modal fade bs-example-modal-lg" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Post Measurements</h4>
+              </div>
+               <div class="modal-body">
+                 <div class="row">
+                   <form id="form">
+                     <div class="row">
+                       <div class="col-md-6 col-md-offset-3">
+                         <div class="form-group">
+                           <label for="name" class="sr-only">Name</label>
+                           <input type="text" name="clientName" value="name" id="name" placeholder="" class="form-control" required>
+                         </div>
+                       </div>
+                       <div class="col-xs-offset-1 col-xs-5 ">
+                         <h4 class="mb-3">Top</h4>
+                         <div class="form-group">
+                           <label for="length" class="sr-only">Torso Length</label>
+                           <input type="text" name="length"  id="length" placeholder="length" class="form-control">
+                         </div>
+                         <div class="form-group">
+                           <label for="chest" class="sr-only">Chest </label>
+                           <input type="text" name="chest"  id="chest" placeholder="chest" class="form-control">
+                         </div>
+                         <div class="form-group">
+                           <label for="Back" class="sr-only">Back</label>
+                           <input type="text" name="back"  id="back" placeholder="back" class="form-control">
+                         </div>
+                         <div class="form-group">
+                           <label for="shoulder" class="sr-only">shoulder</label>
+                           <input type="text" name="shoulder"  id="shoulder" placeholder="shoulder" class="form-control">
+                         </div>
+                         <div class="form-group">
+                           <label for="bottom" class="sr-only">Jacket Waist</label>
+                           <input type="text" name="bottom" value="" id="bottom" placeholder="Jacket Waist" class="form-control">
+                         </div>
+                       </div>
+                       <div class="col-xs-5 ">
+                         <h4>Pants</h4>
+                         <div class="form-group">
+                           <label for="trouserlength" class="sr-only">Length</label>
+                           <input type="text" name="trouserlength"  id="trouserlength" placeholder="Trouser Length" class="form-control">
+                         </div>
+                         <div class="form-group">
+                           <label for="waist" class="sr-only">Waist</label>
+                           <input type="text" name="waist"  id="waist" placeholder="waist" class="form-control">
+                         </div>
+                         <div class="form-group">
+                           <label for="inseam" class="sr-only">inseam</label>
+                           <input type="text" name="inseam" id="inseam" placeholder="Inside Leg" class="form-control">
+                         </div>
+                         <div class="form-group">
+                           <label for="hips" class="sr-only">Hips</label>
+                           <input type="text" name="hips"  id="hips" placeholder="Hips" class="form-control">
+                         </div>
+                         <div class="form-group">
+                           <label for="cuff" class="sr-only">Trouser Cuff</label>
+                           <input type="text" name="cuff" id="cuff" placeholder="Trouser Cuff" class="form-control">
+                         </div>
+                       </div>
+                     </div>
+                     <!-- Save   -->
+                     <div class="row">
+                       <div class="col-sm-6 col-sm-offset-3">
+                         <button type="button" name="button" id="saveMe" class="btn-primary btn btn-large btn-block">Save Me</button>
+                       </div>
+                     </div>
+                     <!--Extras Text Box  -->
+                     <div class="row">
+                       <div class="col-md-6 col-md-offset-3">
+                         <div class="form-group">
+                           <label for="extras">Extras</label>
+                           <textarea name="extras" class="form-control" id="extras"
+                           placeholder="Type in any extras" rows="7" cols="50"></textarea>
+                         </div>
+                       </div>
+                     </div>
+
+                     <!--Commitment Dates   -->
+                       <div class="row">
+                         <div class="col-md-6">
+                           <div class="form-group">
+                             <label for="date" >Date Collected</label>
+                             <input type="date" name="date" id="date" required>
+                           </div>
+                         </div>
+                         <div class="col-md-6">
+                           <div class="form-group">
+                             <label for="dueDate">Due Date</label>
+                             <input type="date" name="dueDate" required id="dueDate">
+                           </div>
+                         </div>
+                       </div>
+                   </form>
+                 </div>
+               </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GET Modal -->
+        <div class="modal fade bs-example-modal-lg" id="getModal" tabindex="-2" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Get all Measurements</h4>
+              </div>
+              <div class="modal-body">
+                <div class="fetch-repo">
+                  <ul class="jummy list-unstyled list-inline row" id="setup">
+
+                  </ul>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- search Modal -->
+        <div class="modal fade" id="searchModal" tabindex="-3" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Find a specific customer</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-offset-1 col-md-4">
+                      <div class="thumbnail">
+                        <h5>Type in Name here </h5>
+                        <div class="alert alert-warning hidden" id="snitch">
+                          <p>Cannot find Client!!</p>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="search" placeholder="Type name" id="searchB"  class="form-control" autocomplete="off">
+                        </div>
+                        <button type="button" name="find" class="btn btn-md btn-block btn-primary" id="searchBot">Find Client</button>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="thumbnail">
+                        <h5>Results</h5>
+                        <div class="row" id="singles">
+
+                        </div>
+                        <button type="button" id="delete" class="btn btn-sm btn-danger hidden">DELETE</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Get the script -->
+    <script type="text/javascript" src="js/jquery.min.js">
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/ajx.js">
+    </script>
+  </body>
+</html>

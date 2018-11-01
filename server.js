@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 // const hbs = require('hbs');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
 
 // ES6 grabons
 
@@ -19,6 +20,7 @@ var app = express();
 // app.use(express.static('public'));
 app.use(express.static(__dirname+'/public'))
 app.use(bodyParser.json());
+app.use(cors({origin: 'http://localhost:3000'}))
 // Routes and thier responses
 
 // Log all visitors
@@ -36,6 +38,9 @@ app.use((req, res, next) => {
 // Home page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+app.get('/dash', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/dash.html'));
 });
 
 

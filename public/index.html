@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Clientele</title>
+     <link href="css/nav.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main container myJumbotron">
+      <!--Form for Submission of new clients  -->
+      <div class="container">
+        <form class="" id="form">
+          <div class="text-center">
+            <!--Body measurements  -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                      <div class="form-group">
+                        <label for="name" class="sr-only">Name</label>
+                        <input type="text" name="clientName" value="name" id="name" placeholder="" class="form-control" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 pull-left">
+                    <h2 class="mb-3">Top</h2>
+                    <div class="form-group">
+                      <label for="length" class="sr-only">Torso Length</label>
+                      <input type="text" name="length" value="length" id="length" placeholder="length" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="chest" class="sr-only">Chest </label>
+                      <input type="text" name="chest" value="chest" id="chest" placeholder="chest" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="Back" class="sr-only">Back</label>
+                      <input type="text" name="back" value="back" id="back" placeholder="back" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="shoulder" class="sr-only">shoulder</label>
+                      <input type="text" name="shoulder" value="shoulder" id="shoulder" placeholder="shoulder" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="bottom" class="sr-only">Jacket Waist</label>
+                      <input type="text" name="bottom" value="" id="bottom" placeholder="Jacket Waist" class="form-control">
+                    </div>
+                    <button type="button" name="button" id="saveMe" class="btn-primary btn btn-large">Save Me</button>
+                  </div>
+                  <div class="col-xs-6 pull-right ">
+                    <h2>Pants</h2>
+                    <div class="form-group">
+                      <label for="trouserlength" class="sr-only">Length</label>
+                      <input type="text" name="trouserlength" value="Trouser Length" id="trouserlength" placeholder="Trouser Length" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="waist" class="sr-only">Waist</label>
+                      <input type="text" name="waist" value="waist" id="waist" placeholder="waist" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="inseam" class="sr-only">inseam</label>
+                      <input type="text" name="inseam" value="Inside Leg" id="inseam" placeholder="Inside Leg" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="hips" class="sr-only">Hips</label>
+                      <input type="text" name="hips" value="hips" id="hips" placeholder="Hips" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="cuff" class="sr-only">Trouser Cuff</label>
+                      <input type="text" name="cuff" value="Trouser Cuff" id="cuff" placeholder="Trouser Cuff" class="form-control">
+                    </div>
+
+                    <button type="button" name="button" id="pushMe" class="btn-primary btn btn-large">Push Me</button>
+                  </div>
+                </div>
+                <!--Extras Text Box  -->
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                    <div class="form-group">
+                      <label for="extras">Extras</label>
+                      <textarea name="extras" class="form-control" id="extras"
+                      placeholder="Type in any extras" rows="8" cols="80"></textarea>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <!--Commitment Dates   -->
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="date" >Date Collected</label>
+                    <input type="date" name="date" id="date" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+
+                  <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+                    <input type="date" name="dueDate" required id="dueDate">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit" id="getit">Save</button>
+        </form>
+      </div>
+        <!--Portion for Display of all customers  -->
+      <div class="fetch-repo container">
+        <ul class="jummy list-unstyled list-inline row" id="setup">
+
+        </ul>
+      </div>
+      <!--Portion for the finding and display of one customer -->
+      <div class="container">
+        <h3 class="col-md-offset-5 centered">Find a specific customer</h3>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-md-offset-2">
+            <div class="thumbnail mySmallJumbotron">
+              <h3>Type in Name here </h3>
+              <div class="alert alert-warning hidden" id="snitch">
+                <p>Cannot find Client!!</p>
+              </div>
+              <div class="form-group">
+                <input type="text" name="search" placeholder="Type name" id="search" value="Seyi Yum" class="form-control" autocomplete="off">
+              </div>
+              <button type="button" name="find" id="find" class="btn btn-md btn-block btn-primary">Find Client</button>
+
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-md-offset-1">
+            <div class="thumbnail mySmallJumbotron">
+              <h3>Results</h3>
+              <div class="row" id="singles">
+
+              </div>
+              <button type="button" id="delete" class="btn btn-sm btn-danger hidden">DELETE</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js">
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/ajx.js">
+    </script>
+    <script type="text/javascript">
+      
+    </script>
+  </body>
+</html>
